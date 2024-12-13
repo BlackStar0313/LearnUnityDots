@@ -77,10 +77,12 @@
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/SampleCubeSpwanSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeAuth.cs" />
     <Compile Include="Assets/Scripts/SampleCubeSystem.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
+    <Compile Include="Assets/Scripts/SampleCubeInit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
