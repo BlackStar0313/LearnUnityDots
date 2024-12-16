@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubePrefab: {fileID: 2748376710822587631, guid: ed9cb529a47ae433db22e3aa94e17982, type: 3}
-  Count: 10
+  Count: 1000
 --- !u!4 &1244064876
 Transform:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ partial struct SampleCubeSystem : ISystem
 
         foreach (var (transform, sampleTag) in SystemAPI.Query<RefRW<LocalTransform>, RefRO<SampleTag>>())
         {
-            transform.ValueRW.Position.x += sampleTag.ValueRO.Speed * deltaTime;
+            transform.ValueRW.Position += sampleTag.ValueRO.Speed * deltaTime;
         }
 
         // var ecb = new EntityCommandBuffer(Allocator.TempJob);
@@ -51,7 +51,7 @@ partial struct SampleCubeDeleteJob : IJobEntity
     public EntityCommandBuffer EntityCommandBuffer;
     public void Execute(Entity entity, LocalTransform transform)
     {
-        if (transform.Position.x > 10)
+        if (math.lengthsq(transform.Position) > 100)
         {
             EntityCommandBuffer.DestroyEntity(entity);
         }

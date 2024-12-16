@@ -5,7 +5,7 @@ class SampleCubeInit : MonoBehaviour
 {
 
     public GameObject CubePrefab;
-    public int Count = 10;
+    public int Count = 1000;
 
     class Baker : Baker<SampleCubeInit>
     {

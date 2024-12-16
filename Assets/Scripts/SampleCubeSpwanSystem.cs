@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
 
 partial struct SampleCubeSpwanSystem : ISystem
 {
@@ -33,9 +34,14 @@ partial struct SampleCubeSpwanSystem : ISystem
             for (int i = 0; i < instances.Length; i++)
             {
                 var entity = instances[i];
-                var randValue = UnityEngine.Random.Range(0.5f, 2.0f);
                 var sampleTag = state.EntityManager.GetComponentData<SampleTag>(entity);
-                sampleTag.Speed = randValue;
+
+                var randSpeed = new float3(
+                    UnityEngine.Random.Range(-1.0f, 2.0f), // x value
+                    0.0f, // y value
+                    UnityEngine.Random.Range(-1.0f, 1.0f)  // z value
+                );
+                sampleTag.Speed = randSpeed;
                 state.EntityManager.SetComponentData(entity, sampleTag);
             }
         }

@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
 
 class SampleCubeAuth : MonoBehaviour
@@ -12,7 +13,12 @@ class SampleCubeAuth : MonoBehaviour
 
             // var randValue = Unity.Mathematics.Random.CreateFromIndex((uint)entity.Index).NextFloat(0f, 1.0f);
             // Debug.Log("Entity speed is  " + randValue);
-            AddComponent(entity, new SampleTag { Value = 1.0f, Speed = 1 });
+            var randSpeed = new float3(
+                UnityEngine.Random.Range(-1.0f, 1.0f), // x value
+                0.0f, // y value
+                UnityEngine.Random.Range(-1.0f, 1.0f)  // z value
+            );
+            AddComponent(entity, new SampleTag { Value = 1.0f, Speed = randSpeed });
         }
     }
 }
@@ -22,7 +28,7 @@ struct SampleTag : IComponentData
 {
     public float Value;
 
-    public float Speed;
+    public float3 Speed;
 }
 
 
