@@ -8,6 +8,9 @@ using Unity.Mathematics;
 
 partial struct SampleCubeSpwanSystem : ISystem
 {
+
+    private float createInterval;
+
     [BurstCompile]
     public void OnCreate(ref SystemState state)
     {
@@ -18,6 +21,14 @@ partial struct SampleCubeSpwanSystem : ISystem
     public void OnUpdate(ref SystemState state)
     {
 
+        float interval = 0.5f;
+
+        createInterval -= SystemAPI.Time.DeltaTime;
+        if (createInterval > 0)
+        {
+            return;
+        }
+        createInterval = interval;
         // Debug.Log("SampleCubeSpwanSystem OnUpdate");
 
         // BurstDebug.Log("SampleCubeSpwanSystem OnUpdate");
@@ -27,11 +38,11 @@ partial struct SampleCubeSpwanSystem : ISystem
         var curCubeArrQuery = SystemAPI.QueryBuilder().WithAll<SampleTag>().Build();
         int curCubeCount = curCubeArrQuery.CalculateEntityCount();
         int waitForCreateNum = Math.Max(initEntity.Count - curCubeCount, 0);
+        // int waitForCreateNum = initEntity.Count;
 
         var cubeFinishInitQuery = SystemAPI.QueryBuilder().WithAll<SampleWaitForInit>().Build();
         state.EntityManager.RemoveComponent<SampleWaitForInit>(cubeFinishInitQuery);
 
-        // Debug.Log(waitForCreateNum);
         if (waitForCreateNum > 0)
         {
             //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<直接创建entity <<<<<<<<<<<<<
