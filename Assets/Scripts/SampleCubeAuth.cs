@@ -19,6 +19,7 @@ class SampleCubeAuth : MonoBehaviour
                 UnityEngine.Random.Range(-1.0f, 1.0f)  // z value
             );
             AddComponent(entity, new SampleTag { Value = 1.0f, Speed = randSpeed });
+            AddComponent(entity, new SampleWaitForInit());
         }
     }
 }
@@ -29,6 +30,11 @@ struct SampleTag : IComponentData
     public float Value;
 
     public float3 Speed;
+}
+
+struct SampleWaitForInit : IComponentData
+{
+
 }
 
 
