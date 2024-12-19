@@ -9,7 +9,7 @@ namespace Tank
         {
             public override void Bake(TankAuth authoring)
             {
-                var entity = GetEntity(TransformUsageFlags.None);
+                var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent(entity, new TankData
                 {
                     moveSpeed = 5,

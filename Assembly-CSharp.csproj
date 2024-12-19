@@ -85,16 +85,20 @@
     <Compile Include="Assets/Scripts/SampleCubeSpwanSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/TankTypes.cs" />
+    <Compile Include="Assets/Scripts/Tank/Component/TankCamera.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankInputAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankConfigAuth.cs" />
     <Compile Include="Assets/Scripts/SampleCubeSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankConfigData.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankInput.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankMainCameraSystem.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankGameCameraSystem.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankHeathAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankData.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankPlayerMoveSystem.cs" />
+    <Compile Include="Assets/Scripts/Tank/Authoring/TankGameCameraAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankInputSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeInit.cs" />
   </ItemGroup>
