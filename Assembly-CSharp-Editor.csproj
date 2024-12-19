@@ -75,6 +75,8 @@
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Common.dll" />
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/SystemGenerator.EntityQueryBulkOperations.dll" />
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Unity.Entities.Analyzer.CodeFixes.dll" />
+    <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.logging/Runtime/SourceGenerators/MainLoggingGenerator.dll" />
+    <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.logging/Runtime/SourceGenerators/LoggingCommon.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
@@ -1322,6 +1324,10 @@
     </Reference>
     <Reference Include="Unity.Deformations">
       <HintPath>Library/ScriptAssemblies/Unity.Deformations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Logging">
+      <HintPath>Library/ScriptAssemblies/Unity.Logging.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">

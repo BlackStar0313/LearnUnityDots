@@ -13,6 +13,7 @@ namespace Tank
                 AddComponent(entity, new TankData
                 {
                     moveSpeed = 5,
+                    rotateSpeed = 90,
                     type = TankTypes.Player
                 });
                 AddComponent<TankIsPlayer>(entity);

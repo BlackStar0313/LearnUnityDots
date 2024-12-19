@@ -40,13 +40,13 @@ namespace Tank
         {
             public void Execute(Entity entity, ref TankData tankData, ref LocalTransform localTransform, ref TankHealth tankHealth)
             {
-                tankData.moveSpeed = 10;
+                tankData.moveSpeed = 2;
                 tankData.type = TankTypes.Player;
 
                 tankHealth.maxHp = 100;
                 tankHealth.curHp = 100;
 
-                localTransform.Position = new float3(1, 0, 0);
+                localTransform.Position = new float3(0, 0, -4);
             }
         }
     }

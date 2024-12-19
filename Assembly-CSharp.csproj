@@ -75,6 +75,8 @@
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Common.dll" />
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/SystemGenerator.EntityQueryBulkOperations.dll" />
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Unity.Entities.Analyzer.CodeFixes.dll" />
+    <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.logging/Runtime/SourceGenerators/MainLoggingGenerator.dll" />
+    <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.logging/Runtime/SourceGenerators/LoggingCommon.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Tank/System/TankSpwanSystem.cs" />
@@ -83,13 +85,17 @@
     <Compile Include="Assets/Scripts/SampleCubeSpwanSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/TankTypes.cs" />
+    <Compile Include="Assets/Scripts/Tank/Authoring/TankInputAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankConfigAuth.cs" />
     <Compile Include="Assets/Scripts/SampleCubeSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankConfigData.cs" />
+    <Compile Include="Assets/Scripts/Tank/Component/TankInput.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankHeathAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankData.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankPlayerMoveSystem.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankInputSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeInit.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1296,6 +1302,10 @@
     </Reference>
     <Reference Include="Unity.Deformations">
       <HintPath>Library/ScriptAssemblies/Unity.Deformations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Logging">
+      <HintPath>Library/ScriptAssemblies/Unity.Logging.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
