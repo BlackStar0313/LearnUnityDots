@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{38EA1CE3-CE17-FBA4-2C77-E9BB6B0E4DDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Physics.Custom", "Unity.Physics.Custom.csproj", "{94CB3565-BB7D-6F05-F77B-0ED472B3EDB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Physics.Custom.Editor", "Unity.Physics.Custom.Editor.csproj", "{0307A100-83BD-7209-5A3F-FF10044DB9C7}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{9F299DBA-665A-55DB-5141-DE1B921F9B2D}"
 EndProject
 Global
@@ -15,6 +19,14 @@ Global
 		{38EA1CE3-CE17-FBA4-2C77-E9BB6B0E4DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38EA1CE3-CE17-FBA4-2C77-E9BB6B0E4DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38EA1CE3-CE17-FBA4-2C77-E9BB6B0E4DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CB3565-BB7D-6F05-F77B-0ED472B3EDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CB3565-BB7D-6F05-F77B-0ED472B3EDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CB3565-BB7D-6F05-F77B-0ED472B3EDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CB3565-BB7D-6F05-F77B-0ED472B3EDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0307A100-83BD-7209-5A3F-FF10044DB9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0307A100-83BD-7209-5A3F-FF10044DB9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0307A100-83BD-7209-5A3F-FF10044DB9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0307A100-83BD-7209-5A3F-FF10044DB9C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F299DBA-665A-55DB-5141-DE1B921F9B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F299DBA-665A-55DB-5141-DE1B921F9B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F299DBA-665A-55DB-5141-DE1B921F9B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU

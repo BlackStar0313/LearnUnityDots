@@ -46,7 +46,7 @@ namespace Tank
                 tankHealth.maxHp = 100;
                 tankHealth.curHp = 100;
 
-                localTransform.Position = new float3(0, 0, -4);
+                localTransform.Position = new float3(0, 5, -4);
             }
         }
     }
