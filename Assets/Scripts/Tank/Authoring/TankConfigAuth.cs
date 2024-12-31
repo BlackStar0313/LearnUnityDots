@@ -7,6 +7,7 @@ namespace Tank
     class TankConfigAuth : MonoBehaviour
     {
         public GameObject tankPrefab;
+        public GameObject shellPrefab;
         public int enemyCount = 100;
         public int playerHp = 100;
         public int enemyHp = 100;
@@ -21,7 +22,8 @@ namespace Tank
                     tankPrefab = GetEntity(authoring.tankPrefab, TransformUsageFlags.Dynamic),
                     enemyCount = authoring.enemyCount,
                     playerHp = authoring.playerHp,
-                    enemyHp = authoring.enemyHp
+                    enemyHp = authoring.enemyHp,
+                    shellPrefab = GetEntity(authoring.shellPrefab, TransformUsageFlags.Dynamic)
                 });
             }
         }

@@ -22,6 +22,7 @@ namespace Tank
             input.InputD = Input.GetKey(KeyCode.D) ? 1 : 0;
             input.InputW = Input.GetKey(KeyCode.W) ? 1 : 0;
             input.InputS = Input.GetKey(KeyCode.S) ? -1 : 0;
+            input.Fire = Input.GetKey(KeyCode.Space) ? true : false;
 
             SystemAPI.SetSingleton(input);
 

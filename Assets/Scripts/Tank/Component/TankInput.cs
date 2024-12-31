@@ -7,5 +7,6 @@ public struct TankInput : IComponentData
 	public float InputA;
 	public float InputD;
 
+	public bool Fire;
 
 }
