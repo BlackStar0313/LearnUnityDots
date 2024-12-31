@@ -2,22 +2,22 @@ using Unity.Entities;
 using Unity.Logging;
 using UnityEngine;
 
-public partial class TankShellSystemGroup : ComponentSystemGroup
+namespace Tank
 {
-
-	private float deltaTime;
-	private float updateInterval = 0.05f;
-	protected override void OnUpdate()
+	public partial class TankShellSystemGroup : ComponentSystemGroup
 	{
-		deltaTime += SystemAPI.Time.DeltaTime;
-		if (deltaTime > updateInterval)
+		private float deltaTime;
+		private float updateInterval = 0.05f;
+		protected override void OnUpdate()
 		{
-			base.OnUpdate();
-			deltaTime -= updateInterval;
+			deltaTime += SystemAPI.Time.DeltaTime;
+			if (deltaTime > updateInterval)
+			{
+				base.OnUpdate();
+				deltaTime -= updateInterval;
 
-			// Log.Info("TankShellSystemGroup OnUpdate");
+				// Log.Info("TankShellSystemGroup OnUpdate");
+			}
 		}
-
 	}
-
 }

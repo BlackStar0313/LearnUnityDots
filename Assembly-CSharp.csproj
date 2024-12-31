@@ -105,6 +105,7 @@
     <Compile Include="Assets/Scripts/Tank/Authoring/TankGameCameraAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankInputSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeInit.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankShellMoveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

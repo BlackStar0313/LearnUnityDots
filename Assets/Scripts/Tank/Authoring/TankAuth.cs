@@ -5,6 +5,8 @@ namespace Tank
 {
     class TankAuth : MonoBehaviour
     {
+        public Transform firePos;
+
         class TankAuthBaker : Baker<TankAuth>
         {
             public override void Bake(TankAuth authoring)
@@ -14,7 +16,8 @@ namespace Tank
                 {
                     moveSpeed = 5,
                     rotateSpeed = 90,
-                    type = TankTypes.Player
+                    type = TankTypes.Player,
+                    firePos = authoring.firePos.position
                 });
                 AddComponent<TankIsPlayer>(entity);
                 SetComponentEnabled<TankIsPlayer>(entity, false);
