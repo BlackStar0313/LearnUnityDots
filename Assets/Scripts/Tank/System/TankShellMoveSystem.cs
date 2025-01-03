@@ -20,7 +20,9 @@ namespace Tank
             var ecb = new EntityCommandBuffer(Allocator.TempJob);
             var destroyJob = new TankShellDestoryJob
             {
-                EntityCommandBuffer = ecb.AsParallelWriter()
+                EntityCommandBuffer = ecb.AsParallelWriter(),
+                BoomPosCollection = state.GetBufferLookup<TankShellBoomPosCollection>(),
+                ConfigEntity = SystemAPI.GetSingletonEntity<TankConfigData>(),
             };
             state.Dependency = destroyJob.Schedule(state.Dependency);
             state.Dependency.Complete();
@@ -34,10 +36,17 @@ namespace Tank
     partial struct TankShellDestoryJob : IJobEntity
     {
         public EntityCommandBuffer.ParallelWriter EntityCommandBuffer;
+        public BufferLookup<TankShellBoomPosCollection> BoomPosCollection;
+        public Entity ConfigEntity;
+
         public void Execute(Entity entity, [EntityIndexInQuery] int index, [ReadOnly] ref LocalToWorld localToWorld, [ReadOnly] ref TankShell tankShell)
         {
             if (localToWorld.Position.y <= 0.5)
             {
+
+                var buffer = BoomPosCollection[ConfigEntity];
+                buffer.Add(new TankShellBoomPosCollection { Position = localToWorld.Position });
+
                 EntityCommandBuffer.DestroyEntity(index, entity);
             }
         }

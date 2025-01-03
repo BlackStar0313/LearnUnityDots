@@ -6,11 +6,12 @@ namespace Tank
 {
     class TankConfigAuth : MonoBehaviour
     {
-        public GameObject tankPrefab;
-        public GameObject shellPrefab;
-        public int enemyCount = 100;
-        public int playerHp = 100;
-        public int enemyHp = 100;
+        public GameObject TankPrefab;
+        public GameObject ShellPrefab;
+        public GameObject ShellBoomPrefab;
+        public int EnemyCount = 100;
+        public int PlayerHp = 100;
+        public int EnemyHp = 100;
 
         class TankConfigAuthBaker : Baker<TankConfigAuth>
         {
@@ -19,12 +20,15 @@ namespace Tank
                 var entity = GetEntity(TransformUsageFlags.None);
                 AddComponent(entity, new TankConfigData
                 {
-                    tankPrefab = GetEntity(authoring.tankPrefab, TransformUsageFlags.Dynamic),
-                    enemyCount = authoring.enemyCount,
-                    playerHp = authoring.playerHp,
-                    enemyHp = authoring.enemyHp,
-                    shellPrefab = GetEntity(authoring.shellPrefab, TransformUsageFlags.Dynamic)
+                    TankPrefab = GetEntity(authoring.TankPrefab, TransformUsageFlags.Dynamic),
+                    EnemyCount = authoring.EnemyCount,
+                    PlayerHp = authoring.PlayerHp,
+                    EnemyHp = authoring.EnemyHp,
+                    ShellPrefab = GetEntity(authoring.ShellPrefab, TransformUsageFlags.Dynamic),
+                    ShellBoomPrefab = GetEntity(authoring.ShellBoomPrefab, TransformUsageFlags.Dynamic)
                 });
+
+                AddBuffer<TankShellBoomPosCollection>(entity);
             }
         }
     }

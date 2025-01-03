@@ -27,7 +27,7 @@ namespace Tank
                 var tankQuery = SystemAPI.QueryBuilder().WithAll<TankIsPlayer>().Build();
                 if (tankQuery.CalculateEntityCount() == 0)
                 {
-                    var playerTank = state.EntityManager.Instantiate(config.tankPrefab);
+                    var playerTank = state.EntityManager.Instantiate(config.TankPrefab);
                     state.EntityManager.SetComponentEnabled<TankIsPlayer>(playerTank, true);
 
                     var createJob = new TankPlayerInitJob();

@@ -28,7 +28,7 @@ namespace Tank
             var input = SystemAPI.GetSingleton<TankInput>();
             if (input.Fire == true)
             {
-                var shell = state.EntityManager.Instantiate(config.shellPrefab);
+                var shell = state.EntityManager.Instantiate(config.ShellPrefab);
                 var tankShell = state.EntityManager.GetComponentData<TankShell>(shell);
                 tankShell.moveSpeed = 10;
 
