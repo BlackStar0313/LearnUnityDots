@@ -85,6 +85,7 @@ namespace Tank
             //     var tankCell = state.EntityManager.GetComponentData<TankShell>(shell);
             //     tankCell.moveSpeed = 10;
             // }
+
         }
     }
 }
