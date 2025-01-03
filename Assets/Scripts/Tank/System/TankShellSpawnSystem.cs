@@ -5,6 +5,7 @@ using Unity.Logging;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Tank
 {
@@ -71,6 +72,10 @@ namespace Tank
                 };
                 state.EntityManager.SetComponentData(shell, physicsVelocity);
 
+
+                // 获取粒子系统组件
+                // PlayFireParticleSystem(state.EntityManager, shell);
+                state.EntityManager.SetComponentEnabled<TankShellParticleTag>(shell, true);
             }
 
             // var shellQuery = SystemAPI.QueryBuilder().WithAll<TankShell>().Build();

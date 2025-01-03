@@ -100,6 +100,7 @@
     <Compile Include="Assets/Scripts/Tank/Authoring/TankHeathAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankShellSpawnSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankData.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankShellParticleSystem.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankPlayerMoveSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankGameCameraAuth.cs" />
