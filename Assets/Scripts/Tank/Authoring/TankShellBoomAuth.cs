@@ -11,7 +11,11 @@ class TankShellBoomAuth : MonoBehaviour
             var entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent(entity, new TankShellBoom
             {
-                particleEntity = GetEntity(authoring.particleSystem, TransformUsageFlags.Dynamic)
+                particleEntity = GetEntity(authoring.particleSystem, TransformUsageFlags.Dynamic),
+            });
+            AddComponent(entity, new TankShellBoomTimer
+            {
+                TimeToLive = 10f,
             });
         }
     }

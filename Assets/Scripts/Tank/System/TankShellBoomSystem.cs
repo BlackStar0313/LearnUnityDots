@@ -28,7 +28,7 @@ partial struct TankShellBoomSystem : ISystem
 
                 var boom = state.EntityManager.Instantiate(configData.ShellBoomPrefab);
                 var boomTransform = state.EntityManager.GetComponentData<LocalTransform>(boom);
-                boomTransform.Position = new float3(1, 1, 1);
+                boomTransform.Position = new float3(pos.Position.x, pos.Position.y, pos.Position.z);
                 state.EntityManager.SetComponentData(boom, boomTransform);
 
                 // 获取粒子系统组件并播放
@@ -38,10 +38,30 @@ partial struct TankShellBoomSystem : ISystem
                 {
                     Log.Info($"Boom: {particleSystem}");
                     particleSystem.Play();
+
+                    var timer = state.EntityManager.GetComponentData<TankShellBoomTimer>(boom);
+                    timer.TimeToLive = particleSystem.main.duration;
+                    state.EntityManager.SetComponentData(boom, timer);
                 }
                 // Debug.Log($"Boom: {pos.Position}");
             }
             buffer.Clear();
         }
+
+        // 处理需要销毁的爆炸效果
+        var deltaTime = SystemAPI.Time.DeltaTime;
+        var ecb = new EntityCommandBuffer(Unity.Collections.Allocator.Temp);
+
+        foreach (var (timer, entity) in SystemAPI.Query<RefRW<TankShellBoomTimer>>().WithEntityAccess())
+        {
+            timer.ValueRW.TimeToLive -= deltaTime;
+            if (timer.ValueRW.TimeToLive <= 0)
+            {
+                ecb.DestroyEntity(entity);
+            }
+        }
+
+        ecb.Playback(state.EntityManager);
+        ecb.Dispose();
     }
 }
