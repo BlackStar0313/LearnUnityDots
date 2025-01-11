@@ -1401,6 +1401,10 @@
       <HintPath>Library/ScriptAssemblies/Unity.Rendering.LightTransport.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Cursor.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Cursor.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
