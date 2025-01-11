@@ -94,6 +94,7 @@
     <Compile Include="Assets/Scripts/Tank/Component/TankShell.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankConfigData.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankInput.cs" />
+    <Compile Include="Assets/Scripts/Tank/Group/TankIntervalSystemGroup.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankMainCameraSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankShellAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankShellBoomAuth.cs" />
@@ -103,10 +104,12 @@
     <Compile Include="Assets/Scripts/Tank/System/TankShellSpawnSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankData.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankShellParticleSystem.cs" />
+    <Compile Include="Assets/Scripts/Tank/Group/TankEnemySpawnSystemGroup.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankShellBoom.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankPlayerMoveSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankGameCameraAuth.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankEnemySpawnSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankInputSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeInit.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankShellMoveSystem.cs" />

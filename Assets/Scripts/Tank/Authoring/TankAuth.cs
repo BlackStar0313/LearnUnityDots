@@ -21,6 +21,8 @@ namespace Tank
                 });
                 AddComponent<TankIsPlayer>(entity);
                 SetComponentEnabled<TankIsPlayer>(entity, false);
+                AddComponent<TankIsInit>(entity);
+                SetComponentEnabled<TankIsInit>(entity, false);
             }
         }
     }

@@ -4,20 +4,13 @@ using UnityEngine;
 
 namespace Tank
 {
-	public partial class TankShellSystemGroup : ComponentSystemGroup
+	public partial class TankShellSystemGroup : TankIntervalSystemGroup
 	{
-		private float deltaTime;
-		private float updateInterval = 0.05f;
+		protected override float UpdateInterval => 0.1f;
+
 		protected override void OnUpdate()
 		{
-			deltaTime += SystemAPI.Time.DeltaTime;
-			if (deltaTime > updateInterval)
-			{
-				base.OnUpdate();
-				deltaTime -= updateInterval;
-
-				// Log.Info("TankShellSystemGroup OnUpdate");
-			}
+			base.OnUpdate();
 		}
 	}
 }

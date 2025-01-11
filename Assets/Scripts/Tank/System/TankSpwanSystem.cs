@@ -30,14 +30,24 @@ namespace Tank
                     var playerTank = state.EntityManager.Instantiate(config.TankPrefab);
                     state.EntityManager.SetComponentEnabled<TankIsPlayer>(playerTank, true);
 
-                    var createJob = new TankPlayerInitJob();
+                    var ecb = new EntityCommandBuffer(Unity.Collections.Allocator.TempJob);
+                    var createJob = new TankPlayerInitJob
+                    {
+                        ECB = ecb
+                    };
                     state.Dependency = createJob.Schedule(state.Dependency);
+                    state.Dependency.Complete();
+                    ecb.Playback(state.EntityManager);
+                    ecb.Dispose();
                 }
             }
         }
 
+        [WithNone(typeof(TankIsInit))]
+        [WithAll(typeof(TankIsPlayer))]
         public partial struct TankPlayerInitJob : IJobEntity
         {
+            public EntityCommandBuffer ECB;
             public void Execute(Entity entity, ref TankData tankData, ref LocalTransform localTransform, ref TankHealth tankHealth)
             {
                 tankData.moveSpeed = 2;
@@ -47,6 +57,7 @@ namespace Tank
                 tankHealth.curHp = 100;
 
                 localTransform.Position = new float3(0, 5, -4);
+                ECB.SetComponentEnabled<TankIsInit>(entity, true);
             }
         }
     }

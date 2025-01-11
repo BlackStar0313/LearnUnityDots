@@ -13,3 +13,7 @@ public struct TankData : IComponentData
 public struct TankIsPlayer : IComponentData, IEnableableComponent
 {
 }
+
+public struct TankIsInit : IComponentData, IEnableableComponent
+{
+}
