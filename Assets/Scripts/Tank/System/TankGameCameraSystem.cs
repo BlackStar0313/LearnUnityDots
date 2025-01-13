@@ -32,6 +32,7 @@ namespace Tank
                     playerTransform = tankTransform
                 };
                 state.Dependency = cameraJob.Schedule(state.Dependency);
+                state.Dependency.Complete();
             }
             tankEntities.Dispose();
         }
@@ -41,7 +42,8 @@ namespace Tank
     public partial struct TankGameCameraJob : IJobEntity
     {
         public LocalTransform playerTransform;
-        public void Execute(Entity entity, ref LocalTransform localTransform)
+
+        void Execute([EntityIndexInQuery] int entityInQueryIndex, Entity entity, ref LocalTransform localTransform)
         {
             localTransform.Position = playerTransform.Position + new float3(0, 10, -10);
         }
