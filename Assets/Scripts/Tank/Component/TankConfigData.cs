@@ -1,5 +1,6 @@
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
 public struct TankConfigData : IComponentData
 {
@@ -14,4 +15,9 @@ public struct TankConfigData : IComponentData
 public struct TankShellBoomPosCollection : IBufferElementData
 {
 	public float3 Position;
+}
+
+public class TankConfigColorData : IComponentData
+{
+	public Material TankMaterial;
 }

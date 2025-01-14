@@ -13,11 +13,13 @@ namespace Tank
         public int PlayerHp = 100;
         public int EnemyHp = 100;
 
+        public Material TankMaterial;
+
         class TankConfigAuthBaker : Baker<TankConfigAuth>
         {
             public override void Bake(TankConfigAuth authoring)
             {
-                var entity = GetEntity(TransformUsageFlags.None);
+                var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent(entity, new TankConfigData
                 {
                     TankPrefab = GetEntity(authoring.TankPrefab, TransformUsageFlags.Dynamic),
@@ -25,7 +27,12 @@ namespace Tank
                     PlayerHp = authoring.PlayerHp,
                     EnemyHp = authoring.EnemyHp,
                     ShellPrefab = GetEntity(authoring.ShellPrefab, TransformUsageFlags.Dynamic),
-                    ShellBoomPrefab = GetEntity(authoring.ShellBoomPrefab, TransformUsageFlags.Dynamic)
+                    ShellBoomPrefab = GetEntity(authoring.ShellBoomPrefab, TransformUsageFlags.Dynamic),
+                });
+
+                AddComponentObject(entity, new TankConfigColorData
+                {
+                    TankMaterial = authoring.TankMaterial
                 });
 
                 AddBuffer<TankShellBoomPosCollection>(entity);

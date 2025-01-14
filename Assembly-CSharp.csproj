@@ -85,7 +85,9 @@
     <Compile Include="Assets/Scripts/SampleCubeSpwanSystem.cs" />
     <Compile Include="Assets/Scripts/SampleCubeAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/TankTypes.cs" />
+    <Compile Include="Assets/Scripts/Tank/Authoring/TankColorChangeAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankCamera.cs" />
+    <Compile Include="Assets/Scripts/Tank/System/TankChangeColorSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankShellBoomSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Group/TankShellSystemGroup.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankInputAuth.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Assets/Scripts/Tank/Group/TankEnemySpawnSystemGroup.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankShellBoom.cs" />
     <Compile Include="Assets/Scripts/GameWorld.cs" />
+    <Compile Include="Assets/Scripts/Tank/Component/TankColorChangeData.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankPlayerMoveSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankGameCameraAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankEnemySpawnSystem.cs" />
