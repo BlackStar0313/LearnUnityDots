@@ -59,7 +59,7 @@ namespace Tank
             );
             localTransform.Position = randPosition;
 
-            tankData.moveSpeed = 2;
+            tankData.moveSpeed = 1.5f;
             tankData.type = TankTypes.Enemy;
 
             tankHealth.maxHp = 100;

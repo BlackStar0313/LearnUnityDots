@@ -9,6 +9,7 @@ namespace Tank
         public GameObject TankPrefab;
         public GameObject ShellPrefab;
         public GameObject ShellBoomPrefab;
+        public GameObject BoomPrefab;
         public int EnemyCount = 100;
         public int PlayerHp = 100;
         public int EnemyHp = 100;
@@ -28,6 +29,7 @@ namespace Tank
                     EnemyHp = authoring.EnemyHp,
                     ShellPrefab = GetEntity(authoring.ShellPrefab, TransformUsageFlags.Dynamic),
                     ShellBoomPrefab = GetEntity(authoring.ShellBoomPrefab, TransformUsageFlags.Dynamic),
+                    BoomPrefab = GetEntity(authoring.BoomPrefab, TransformUsageFlags.Dynamic)
                 });
 
                 AddComponentObject(entity, new TankConfigColorData

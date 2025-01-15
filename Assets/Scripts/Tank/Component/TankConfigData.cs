@@ -7,6 +7,7 @@ public struct TankConfigData : IComponentData
 	public Entity TankPrefab;
 	public Entity ShellPrefab;
 	public Entity ShellBoomPrefab;
+	public Entity BoomPrefab;
 	public int EnemyCount;
 	public int PlayerHp;
 	public int EnemyHp;

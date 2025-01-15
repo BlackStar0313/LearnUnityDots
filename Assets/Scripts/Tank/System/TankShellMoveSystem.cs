@@ -100,12 +100,14 @@ namespace Tank
                 bool isShellHitEnemyTank = isEnemyTankA ^ isEnemyTankB;
                 if (isShellHitEnemyTank)
                 {
+
+                    Log.Info($"TankShellCollisionEvents Execute isShellHitEnemyTank: {isShellHitEnemyTank}");
                     Entity enemyShell = isEnemyTankA ? entityA : entityB;
 
                     var tankBoomBuffer = TankBoomPosLookup[ConfigEntity];
                     tankBoomBuffer.Add(new TankBoomPosCollection
                     {
-                        Position = shellPosition
+                        Position = TransformLookup[enemyShell].Position
                     });
                     ECB.DestroyEntity(enemyShell);
                 }

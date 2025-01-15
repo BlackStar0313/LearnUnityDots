@@ -79,6 +79,7 @@
     <Analyzer Include="/Users/liuzhiwei/work/unity/learn_unity_dots/Library/PackageCache/com.unity.logging/Runtime/SourceGenerators/LoggingCommon.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Tank/System/TankBoomSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankSpwanSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Component/TankHealth.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets/Scripts/Tank/Component/TankCamera.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankChangeColorSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankShellBoomSystem.cs" />
+    <Compile Include="Assets/Scripts/Tank/Authoring/TankBoomAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Group/TankShellSystemGroup.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankInputAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankConfigAuth.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets/Scripts/Tank/System/TankMainCameraSystem.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankShellAuth.cs" />
     <Compile Include="Assets/Scripts/Tank/Authoring/TankShellBoomAuth.cs" />
+    <Compile Include="Assets/Scripts/Tank/Component/TankBoomData.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankGameCameraSystem.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/Tank/System/TankEnemyMoveSystem.cs" />
