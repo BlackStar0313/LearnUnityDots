@@ -17,6 +17,11 @@ public struct TankShellBoomPosCollection : IBufferElementData
 	public float3 Position;
 }
 
+public struct TankBoomPosCollection : IBufferElementData
+{
+	public float3 Position;
+}
+
 public class TankConfigColorData : IComponentData
 {
 	public Material TankMaterial;

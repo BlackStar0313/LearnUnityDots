@@ -44,9 +44,11 @@ namespace Tank
             {
                 ECB = ecb,
                 BoomPosLookup = state.GetBufferLookup<TankShellBoomPosCollection>(),
+                TankBoomPosLookup = state.GetBufferLookup<TankBoomPosCollection>(),
                 ConfigEntity = SystemAPI.GetSingletonEntity<TankConfigData>(),
                 TankShellLookup = SystemAPI.GetComponentLookup<TankShell>(),
-                TransformLookup = SystemAPI.GetComponentLookup<LocalTransform>()
+                TransformLookup = SystemAPI.GetComponentLookup<LocalTransform>(),
+                TankDataLookup = SystemAPI.GetComponentLookup<TankData>()
             }.Schedule(simulation, state.Dependency);
 
             state.Dependency.Complete();
@@ -60,9 +62,11 @@ namespace Tank
     {
         public EntityCommandBuffer ECB;
         public BufferLookup<TankShellBoomPosCollection> BoomPosLookup;
+        public BufferLookup<TankBoomPosCollection> TankBoomPosLookup;
         public Entity ConfigEntity;
         public ComponentLookup<TankShell> TankShellLookup;
         public ComponentLookup<LocalTransform> TransformLookup;
+        public ComponentLookup<TankData> TankDataLookup;
         // public PhysicsWorld PhysicsWorld;
 
         public void Execute(CollisionEvent collisionEvent)
@@ -74,7 +78,14 @@ namespace Tank
             bool isShellA = TankShellLookup.HasComponent(entityA);
             bool isShellB = TankShellLookup.HasComponent(entityB);
 
-            if (isShellA ^ isShellB)
+            // 检查是否是敌方坦克
+            bool isEnemyTankA = TankDataLookup.HasComponent(entityA) &&
+                TankDataLookup[entityA].type == TankTypes.Enemy;
+            bool isEnemyTankB = TankDataLookup.HasComponent(entityB) &&
+                TankDataLookup[entityB].type == TankTypes.Enemy;
+
+            bool isShellBoom = isShellA ^ isShellB;
+            if (isShellBoom)
             {
                 Entity shellEntity = isShellA ? entityA : entityB;
                 var shellPosition = TransformLookup[shellEntity].Position;
@@ -84,6 +95,20 @@ namespace Tank
                 {
                     Position = shellPosition
                 });
+
+
+                bool isShellHitEnemyTank = isEnemyTankA ^ isEnemyTankB;
+                if (isShellHitEnemyTank)
+                {
+                    Entity enemyShell = isEnemyTankA ? entityA : entityB;
+
+                    var tankBoomBuffer = TankBoomPosLookup[ConfigEntity];
+                    tankBoomBuffer.Add(new TankBoomPosCollection
+                    {
+                        Position = shellPosition
+                    });
+                    ECB.DestroyEntity(enemyShell);
+                }
 
                 ECB.DestroyEntity(shellEntity);
             }

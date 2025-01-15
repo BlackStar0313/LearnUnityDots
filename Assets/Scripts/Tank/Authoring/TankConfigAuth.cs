@@ -36,6 +36,7 @@ namespace Tank
                 });
 
                 AddBuffer<TankShellBoomPosCollection>(entity);
+                AddBuffer<TankBoomPosCollection>(entity);
             }
         }
     }
